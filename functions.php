@@ -1,5 +1,5 @@
 <?php
-defined('MYTHEMEONE_VERSION') or define('MYTHEMEONE_VERSION', '1.0.0');
+defined('MYTHEMEONE_VERSION') or define('MYTHEMEONE_VERSION', '1.0.1');
 
 // ==================================================================================
 // =============================== add theme supports ===============================
@@ -81,3 +81,40 @@ function my_wp_themes_one_custom_post_type()
     );
 }
 add_action('init', 'my_wp_themes_one_custom_post_type');
+
+// ==================================================================================
+// ============================== add custom fields ==============================
+// ==================================================================================
+// add custom meta box
+function my_wp_themes_one_custom_box()
+{
+    add_meta_box(
+        'wporg_box_id',
+        "Service's Additional Fields",
+        'my_wp_themes_one_custom_field',
+        'services'
+    );
+}
+add_action('add_meta_boxes', 'my_wp_themes_one_custom_box');
+
+// create form fields
+function my_wp_themes_one_custom_field($post)
+{ ?>
+    <table class="form-field">
+        <tr>
+            <th>
+                <label for="product-piture">Icon :</label>
+            </th>
+            <td>
+                <input type="text" name="service_item_icon" id="service_item_icon" value="<?php echo get_post_meta($post->ID, 'service_item_icon', true); ?>" />
+            </td>
+        </tr>
+    </table>
+<?php }
+
+// save the data
+function my_wp_themes_one_save($post_id)
+{
+    update_post_meta($post_id, 'service_item_icon', sanitize_text_field($_POST['service_item_icon']));
+}
+add_action('save_post', 'my_wp_themes_one_save');
