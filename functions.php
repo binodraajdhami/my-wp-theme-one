@@ -79,6 +79,20 @@ function my_wp_themes_one_custom_post_type()
             'has_archive' => true,
         )
     );
+
+    // process post type
+    register_post_type(
+        'process',
+        array(
+            'labels' => array(
+                'name' => __('Our Process'),
+                'singular_name' => __('Process')
+            ),
+            'supports' => array('title', 'editor', 'thumbnail'),
+            'public' => true,
+            'has_archive' => true,
+        )
+    );
 }
 add_action('init', 'my_wp_themes_one_custom_post_type');
 
@@ -115,6 +129,6 @@ function my_wp_themes_one_custom_field($post)
 // save the data
 function my_wp_themes_one_save($post_id)
 {
-    update_post_meta($post_id, 'service_item_icon', sanitize_text_field($_POST['service_item_icon']));
+    update_post_meta($post_id, 'service_item_icon', sanitize_text_field(isset($_POST['service_item_icon']) && $_POST['service_item_icon']));
 }
 add_action('save_post', 'my_wp_themes_one_save');

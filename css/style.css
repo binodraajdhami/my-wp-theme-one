@@ -614,3 +614,51 @@ header {
 .business-planning .section-title a:hover::before {
     transform: scale(1);
 }
+
+/* ============================== Process Section ============================== */
+.process {
+    padding: 100px 0;
+}
+
+.process .section-title {
+    text-align: center;
+}
+
+.process .section-title h4 {
+    display: inline-block;
+}
+
+.process-content {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.process-content .process-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: #ccc solid 1px;
+}
+
+.process-content .process-count span {
+    font-size: 36px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 0.8px;
+}
+
+.process-content h4 {
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 30px 0 15px;
+}
+
+.process-content p {
+    color: #999;
+    font-size: 16px;
+    line-height: 30px;
+}

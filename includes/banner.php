@@ -18,7 +18,9 @@
                     <div class="container">
                         <div class="banner-content">
                             <h2><?php the_title(); ?></h2>
-                            <a href="<?php the_permalink(); ?>">Let's Recent Works <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="<?php the_permalink(); ?>">
+                                Let's Recent Works <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>

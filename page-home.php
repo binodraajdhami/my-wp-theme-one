@@ -13,4 +13,7 @@ include_once('includes/welcome.php');
 // import business-planning
 include_once('includes/business-planning.php');
 
+// import process
+include_once('includes/process.php');
+
 get_footer();
