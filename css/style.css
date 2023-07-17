@@ -11,6 +11,27 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+a,
+table,
+tr,
+th,
+td,
+span,
+article {
+    margin: 0;
+    padding: 0;
+}
+
 img {
     height: auto;
 }
@@ -254,7 +275,7 @@ header {
 
 /* ============================== Common Section ============================== */
 .section-title {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .section-title h4 {
@@ -264,6 +285,7 @@ header {
     text-transform: uppercase;
     font-weight: 600;
     padding-left: 50px;
+    margin-bottom: 15px;
 }
 
 .section-title h4::before {
@@ -307,7 +329,7 @@ header {
 .services-item {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 0;
 }
 
 .services-item-thumbnail img {
@@ -340,7 +362,7 @@ header {
     height: calc(100% - 40px);
     background: rgba(255, 255, 255, 1);
     transform: scale(0.9);
-    border-radius: 10px;
+    border-radius: 0;
     z-index: -1;
     transition: all ease-in-out 0.2s;
 }
@@ -430,4 +452,91 @@ header {
     font-size: 20px;
     font-size: 40px;
     line-height: 36px;
+}
+
+/* ============================== Welcome Section ============================== */
+.welcome {
+    padding-bottom: 100px;
+}
+
+.welcome-hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+.welcome-content p {
+    color: #000;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.welcome-content .experience ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.welcome-content .experience ul li {
+    padding: 15px 0;
+    list-style: none;
+}
+
+.welcome-content .experience ul li:first-child {
+    margin-right: 50px;
+    padding-right: 50px;
+    text-align: left;
+    border-right: #e9e9e8 solid 1px;
+}
+
+.welcome-content .experience ul li:first-child span {
+    color: #000;
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.welcome-content .experience ul li:last-child span {
+    display: block;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.welcome-content a {
+    position: relative;
+    display: inline-block;
+    padding: 15px 40px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    background: #fca028;
+    border-radius: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all linear 0.3s;
+    z-index: 1;
+}
+
+.welcome-content a:hover {
+    color: #fca028;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px -10px #000;
+}
+
+.welcome-content a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 30px;
+    transform: scale(0);
+    transition: all ease-in-out 0.3s;
+    z-index: -1;
+}
+
+.welcome-content a:hover::before {
+    transform: scale(1);
 }
