@@ -540,3 +540,77 @@ header {
 .welcome-content a:hover::before {
     transform: scale(1);
 }
+
+/* ============================== Business Planning Section ============================== */
+.business-planning {
+    position: relative;
+    padding: 100px 0;
+    background: url('./../images/business-planning.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+}
+
+.business-planning::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #131313;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.business-planning .section-title {
+    margin-bottom: 0;
+}
+
+.business-planning .section-title h2 {
+    color: #fff;
+    font-size: 60px;
+}
+
+.business-planning .section-title h2 span {
+    display: block;
+}
+
+.business-planning .section-title a {
+    position: relative;
+    display: inline-block;
+    padding: 15px 40px;
+    margin-top: 30px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    background: #fca028;
+    border-radius: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all linear 0.3s;
+    z-index: 1;
+}
+
+.business-planning .section-title a:hover {
+    color: #fca028;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px -10px #000;
+}
+
+.business-planning .section-title a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 30px;
+    transform: scale(0);
+    transition: all ease-in-out 0.3s;
+    z-index: -1;
+}
+
+.business-planning .section-title a:hover::before {
+    transform: scale(1);
+}
