@@ -230,16 +230,29 @@ function my_wp_themes_one_members_custom_field($post)
     </table>
 <?php }
 
-
 // save custom field data
 function my_wp_themes_one_save($post_id)
 {
-    update_post_meta($post_id, 'service_item_icon', sanitize_text_field($_POST['service_item_icon']));
-    update_post_meta($post_id, 'departments_sub_title', sanitize_text_field($_POST['departments_sub_title']));
-    update_post_meta($post_id, 'members_title', sanitize_text_field($_POST['members_title']));
-    update_post_meta($post_id, 'members_facebook', sanitize_text_field($_POST['members_facebook']));
-    update_post_meta($post_id, 'members_instagram', sanitize_text_field($_POST['members_instagram']));
-    update_post_meta($post_id, 'members_twitter', sanitize_text_field($_POST['members_twitter']));
-    update_post_meta($post_id, 'members_linkedin', sanitize_text_field($_POST['members_linkedin']));
+    if (isset($_POST['service_item_icon']) && !empty($_POST['service_item_icon'])) {
+        update_post_meta($post_id, 'service_item_icon', sanitize_text_field($_POST['service_item_icon']));
+    }
+    if (isset($_POST['departments_sub_title']) && !empty($_POST['departments_sub_title'])) {
+        update_post_meta($post_id, 'departments_sub_title', sanitize_text_field($_POST['departments_sub_title']));
+    }
+    if (isset($_POST['members_title']) && !empty($_POST['members_title'])) {
+        update_post_meta($post_id, 'members_title', sanitize_text_field($_POST['members_title']));
+    }
+    if (isset($_POST['members_facebook']) && !empty($_POST['members_facebook'])) {
+        update_post_meta($post_id, 'members_facebook', sanitize_text_field($_POST['members_facebook']));
+    }
+    if (isset($_POST['members_instagram']) && !empty($_POST['members_instagram'])) {
+        update_post_meta($post_id, 'members_instagram', sanitize_text_field($_POST['members_instagram']));
+    }
+    if (isset($_POST['members_twitter']) && !empty($_POST['members_twitter'])) {
+        update_post_meta($post_id, 'members_twitter', sanitize_text_field($_POST['members_twitter']));
+    }
+    if (isset($_POST['members_linkedin']) && !empty($_POST['members_linkedin'])) {
+        update_post_meta($post_id, 'members_linkedin', sanitize_text_field($_POST['members_linkedin']));
+    }
 }
 add_action('save_post', 'my_wp_themes_one_save');

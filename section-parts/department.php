@@ -15,10 +15,8 @@
             <li class="department-item" style="background: url('<?php echo $featured_img_url; ?>') no-repeat center center; background-size: cover;">
                 <div class="department-content">
                     <h4><?php the_title(); ?></h4>
-                    <span>Conbix Consulting</span>
                     <span>
-                        <?php //echo get_post_meta($post->ID, 'departments_sub_title', true); 
-                        ?>
+                        <?php echo get_post_meta($post->ID, 'departments_sub_title', true); ?>
                     </span>
                     <a href="<?php the_permalink(); ?>">
                         <i class="fa-solid fa-arrow-right"></i>

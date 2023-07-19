@@ -2,24 +2,24 @@
 get_header();
 
 // import banner
-include_once('includes/banner.php');
+include_once('section-parts/banner.php');
 
 // import services
-include_once('includes/services.php');
+include_once('section-parts/services.php');
 
 // import welcome
-include_once('includes/welcome.php');
+include_once('section-parts/welcome.php');
 
 // import business-planning
-include_once('includes/business-planning.php');
+include_once('section-parts/business-planning.php');
 
 // import process
-include_once('includes/process.php');
+include_once('section-parts/process.php');
 
 // import department
-include_once('includes/department.php');
+include_once('section-parts/department.php');
 
 // import members
-include_once('includes/members.php');
+include_once('section-parts/members.php');
 
 get_footer();
