@@ -22,4 +22,7 @@ include_once('section-parts/department.php');
 // import members
 include_once('section-parts/members.php');
 
+// import blogs
+include_once('section-parts/blogs.php');
+
 get_footer();
