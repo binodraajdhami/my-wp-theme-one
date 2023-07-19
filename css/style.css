@@ -629,7 +629,7 @@ header {
 }
 
 .process-content {
-    padding: 15px 20px;
+    padding: 15px;
     text-align: center;
 }
 
@@ -661,4 +661,94 @@ header {
     color: #999;
     font-size: 16px;
     line-height: 30px;
+}
+
+/* ============================== Department Section ============================== */
+.department {
+    position: relative;
+    overflow: hidden;
+}
+
+.department-list {
+    display: flex;
+    margin-right: -15px;
+    margin-left: -15px;
+    width: calc(100% + 30px);
+    overflow: hidden;
+}
+
+.department-item {
+    position: relative;
+    list-style: none;
+    width: 15%;
+    height: 500px;
+    background: #666;
+    transition: all ease-in-out 0.3s;
+    border: #fff solid 15px;
+    border-top: none;
+    border-bottom: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.department-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    z-index: -1;
+    transition: all linear 0.3s;
+}
+
+.department-list:hover .department-item:nth-child(1) {
+    width: 15%;
+}
+
+.department-list .department-item:nth-child(1),
+.department-list:hover .department-item:nth-child(1):hover,
+.department-item:hover {
+    width: 55%;
+}
+
+.department-list .department-item:nth-child(1):before,
+.department-list:hover .department-item:nth-child(1):hover:before,
+.department-item:hover:before {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.department-list .department-item .department-content {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    padding: 30px;
+    width: 400px;
+    background: #fff;
+    transform: translateX(-100%);
+    transition: all ease-in-out 0.5s;
+    z-index: 999;
+}
+
+.department-list .department-item:nth-child(1) .department-content,
+.department-list:hover .department-item:nth-child(1):hover .department-content,
+.department-list .department-item:hover .department-content {
+    left: 30px;
+    transform: translateX(0);
+}
+
+.department-list .department-item .department-content a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    background: #fca028;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
 }

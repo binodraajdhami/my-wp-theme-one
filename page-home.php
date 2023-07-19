@@ -16,4 +16,7 @@ include_once('includes/business-planning.php');
 // import process
 include_once('includes/process.php');
 
+// import department
+include_once('includes/department.php');
+
 get_footer();

@@ -93,6 +93,20 @@ function my_wp_themes_one_custom_post_type()
             'has_archive' => true,
         )
     );
+
+    // department post type
+    register_post_type(
+        'departments',
+        array(
+            'labels' => array(
+                'name' => __('Our Departments'),
+                'singular_name' => __('Department')
+            ),
+            'supports' => array('title', 'editor', 'thumbnail'),
+            'public' => true,
+            'has_archive' => true,
+        )
+    );
 }
 add_action('init', 'my_wp_themes_one_custom_post_type');
 
@@ -111,7 +125,7 @@ function my_wp_themes_one_custom_box()
 }
 add_action('add_meta_boxes', 'my_wp_themes_one_custom_box');
 
-// create form fields
+// create services custom field
 function my_wp_themes_one_custom_field($post)
 { ?>
     <table class="form-field">
@@ -126,9 +140,37 @@ function my_wp_themes_one_custom_field($post)
     </table>
 <?php }
 
-// save the data
+// create departments custom metabox
+function my_wp_themes_one_departments_custom_metabox()
+{
+    add_meta_box(
+        'mywpthemeone_metabox_id2',
+        "Department's Additional Fields",
+        'my_wp_themes_one_departments_custom_field',
+        'departments'
+    );
+}
+add_action('add_meta_boxes', 'my_wp_themes_one_departments_custom_metabox');
+
+// create departments custom field
+function my_wp_themes_one_departments_custom_field($post)
+{ ?>
+    <table class="form-field">
+        <tr>
+            <th>
+                <label for="departments_sub_title">Sub Title :</label>
+            </th>
+            <td>
+                <input type="text" name="departments_sub_title" id="departments_sub_title" value="<?php echo get_post_meta($post->ID, 'departments_sub_title', true); ?>" />
+            </td>
+        </tr>
+    </table>
+<?php }
+
+// save custom field data
 function my_wp_themes_one_save($post_id)
 {
     update_post_meta($post_id, 'service_item_icon', sanitize_text_field(isset($_POST['service_item_icon']) && $_POST['service_item_icon']));
+    update_post_meta($post_id, 'departments_sub_title', sanitize_text_field(isset($_POST['departments_sub_title']) && $_POST['departments_sub_title']));
 }
 add_action('save_post', 'my_wp_themes_one_save');
