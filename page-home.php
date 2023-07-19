@@ -19,4 +19,7 @@ include_once('includes/process.php');
 // import department
 include_once('includes/department.php');
 
+// import members
+include_once('includes/members.php');
+
 get_footer();

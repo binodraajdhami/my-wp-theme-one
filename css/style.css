@@ -752,3 +752,9 @@ header {
     color: #fff;
     font-size: 24px;
 }
+
+/* ============================== Member Section ============================== */
+.members {
+    padding: 100px 0;
+    background: #fff;
+}

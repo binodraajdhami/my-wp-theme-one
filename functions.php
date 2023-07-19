@@ -107,6 +107,20 @@ function my_wp_themes_one_custom_post_type()
             'has_archive' => true,
         )
     );
+
+    // member post type
+    register_post_type(
+        'members',
+        array(
+            'labels' => array(
+                'name' => __('Our Members'),
+                'singular_name' => __('Member')
+            ),
+            'supports' => array('title', 'editor', 'thumbnail'),
+            'public' => true,
+            'has_archive' => true,
+        )
+    );
 }
 add_action('init', 'my_wp_themes_one_custom_post_type');
 
@@ -121,6 +135,20 @@ function my_wp_themes_one_custom_box()
         "Service's Additional Fields",
         'my_wp_themes_one_custom_field',
         'services'
+    );
+
+    add_meta_box(
+        'mywpthemeone_metabox_id2',
+        "Department's Additional Fields",
+        'my_wp_themes_one_departments_custom_field',
+        'departments'
+    );
+
+    add_meta_box(
+        'mywpthemeone_metabox_id3',
+        "Member's Additional Fields",
+        'my_wp_themes_one_members_custom_field',
+        'members'
     );
 }
 add_action('add_meta_boxes', 'my_wp_themes_one_custom_box');
@@ -140,18 +168,6 @@ function my_wp_themes_one_custom_field($post)
     </table>
 <?php }
 
-// create departments custom metabox
-function my_wp_themes_one_departments_custom_metabox()
-{
-    add_meta_box(
-        'mywpthemeone_metabox_id2',
-        "Department's Additional Fields",
-        'my_wp_themes_one_departments_custom_field',
-        'departments'
-    );
-}
-add_action('add_meta_boxes', 'my_wp_themes_one_departments_custom_metabox');
-
 // create departments custom field
 function my_wp_themes_one_departments_custom_field($post)
 { ?>
@@ -167,10 +183,63 @@ function my_wp_themes_one_departments_custom_field($post)
     </table>
 <?php }
 
+// create member custom field
+function my_wp_themes_one_members_custom_field($post)
+{ ?>
+    <table class="form-field">
+        <tr>
+            <th>
+                <label for="members_title">Job TItle :</label>
+            </th>
+            <td>
+                <input type="text" name="members_title" id="members_title" value="<?php echo get_post_meta($post->ID, 'members_title', true); ?>" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="members_facebook">Facebook :</label>
+            </th>
+            <td>
+                <input type="text" name="members_facebook" id="members_facebook" value="<?php echo get_post_meta($post->ID, 'members_facebook', true); ?>" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="members_instagram">Instagram :</label>
+            </th>
+            <td>
+                <input type="text" name="members_instagram" id="members_instagram" value="<?php echo get_post_meta($post->ID, 'members_instagram', true); ?>" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="members_twitter">Twitter :</label>
+            </th>
+            <td>
+                <input type="text" name="members_twitter" id="members_twitter" value="<?php echo get_post_meta($post->ID, 'members_twitter', true); ?>" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="members_linkedin">LinkedIn :</label>
+            </th>
+            <td>
+                <input type="text" name="members_linkedin" id="members_linkedin" value="<?php echo get_post_meta($post->ID, 'members_linkedin', true); ?>" />
+            </td>
+        </tr>
+    </table>
+<?php }
+
+
 // save custom field data
 function my_wp_themes_one_save($post_id)
 {
-    update_post_meta($post_id, 'service_item_icon', sanitize_text_field(isset($_POST['service_item_icon']) && $_POST['service_item_icon']));
-    update_post_meta($post_id, 'departments_sub_title', sanitize_text_field(isset($_POST['departments_sub_title']) && $_POST['departments_sub_title']));
+    update_post_meta($post_id, 'service_item_icon', sanitize_text_field($_POST['service_item_icon']));
+    update_post_meta($post_id, 'departments_sub_title', sanitize_text_field($_POST['departments_sub_title']));
+    update_post_meta($post_id, 'members_title', sanitize_text_field($_POST['members_title']));
+    update_post_meta($post_id, 'members_facebook', sanitize_text_field($_POST['members_facebook']));
+    update_post_meta($post_id, 'members_instagram', sanitize_text_field($_POST['members_instagram']));
+    update_post_meta($post_id, 'members_twitter', sanitize_text_field($_POST['members_twitter']));
+    update_post_meta($post_id, 'members_linkedin', sanitize_text_field($_POST['members_linkedin']));
 }
 add_action('save_post', 'my_wp_themes_one_save');
