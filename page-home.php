@@ -1,28 +1,38 @@
 <?php
-get_header();
+get_header(); ?>
 
-// import banner
-include_once('section-parts/banner.php');
+<div class="main-content">
 
-// import services
-include_once('section-parts/services.php');
+    <?php
+    // import banner
+    include_once('sections/banner.php');
 
-// import welcome
-include_once('section-parts/welcome.php');
+    // import services
+    include_once('sections/services.php');
 
-// import business-planning
-include_once('section-parts/business-planning.php');
+    // import welcome
+    include_once('sections/welcome.php');
 
-// import process
-include_once('section-parts/process.php');
+    // import business-planning
+    include_once('sections/business-planning.php');
 
-// import department
-include_once('section-parts/department.php');
+    // import process
+    include_once('sections/process.php');
 
-// import members
-include_once('section-parts/members.php');
+    // import department
+    include_once('sections/department.php');
 
-// import blogs
-include_once('section-parts/blogs.php');
+    // import members
+    include_once('sections/members.php');
 
+    // import blogs
+    include_once('sections/blogs.php');
+
+    // import subscribes
+    include_once('sections/subscribes.php');
+    ?>
+
+</div>
+
+<?php
 get_footer();

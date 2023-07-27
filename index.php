@@ -2,11 +2,14 @@
 get_header();
 ?>
 
+<?php include_once('sections/breadcrumb.php'); ?>
+
 <div class="content">
     <div class="container">
-        <h1><?php the_title(); ?></h1>
+        <div class="content-block">
+            <h1><?php the_title(); ?></h1>
+        </div>
     </div>
 </div>
-
 <?php
 get_footer();

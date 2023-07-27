@@ -389,6 +389,8 @@ header {
 }
 
 .services-item-content span a {
+    display: inline-block;
+    margin-top: 15px;
     color: #fca028;
     text-decoration: none;
     text-transform: uppercase;
@@ -1066,6 +1068,262 @@ header {
     transform: scale(1);
 }
 
+/* ============================== Subscribes Section ============================== */
 .subscribes {
+    position: relative;
     background: transparent;
+    margin-bottom: -100px;
+    z-index: 999;
+}
+
+.subscribes-content {
+    position: relative;
+    padding: 80px 100px;
+    background: url('./../images/subscribe.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: 1;
+}
+
+.subscribes-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+
+.subscribes-content h2 {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subscribes-content span {
+    color: #fff;
+    font-size: 18px;
+}
+
+/* ============================== Footer Section ============================== */
+footer {
+    position: relative;
+    padding: 180px 0 20px;
+    background: #131313;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/footer-bg.png') top left;
+}
+
+.footer-top,
+.footer-copyright {
+    position: relative;
+    z-index: 999;
+}
+
+.footer-about img {
+    width: 100%;
+    height: auto;
+}
+
+.footer-about .custom-html-widget {
+    color: #fff;
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+.footer-copyright {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: #2b2b2b solid 1px;
+}
+
+.footer-copyright p {
+    color: #fff;
+    text-align: center;
+    font-style: 14px;
+    font-weight: 300;
+}
+
+.footer-top .row>div:nth-child(1) {
+    padding-right: 30px;
+}
+
+.footer-top .row>div:nth-child(2),
+.footer-top .row>div:nth-child(3) {
+    padding-left: 30px;
+    border-left: #2b2b2b solid 1px;
+}
+
+.footer-content h3 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.footer-content h4 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.footer-location-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.footer-location-content span:first-child .fa-solid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    color: #fca028;
+    font-size: 20px;
+}
+
+.footer-location-content span:last-child {
+    color: #fff;
+    font-style: 16px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+.footer-post-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+}
+
+.footer-post-thumbnail {
+    margin-right: 15px;
+}
+
+.footer-post-thumbnail img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.footer-post-content span {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.footer-post-content span .fa-solid {
+    color: #fca028;
+    font-size: 18px;
+}
+
+.footer-post-content h5 a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.footer-post-content h5 a:hover {
+    color: #fca028;
+}
+
+/* ============================== Breadcrumb Section ============================== */
+.breadcrumb {
+    padding: 30px 0;
+    background: #000;
+    margin-bottom: 0;
+}
+
+.breadcrumb-list {
+    padding: 10px 15px;
+    background: #fca028;
+}
+
+.breadcrumb-list li {
+    display: inline-block;
+    color: #fff;
+}
+
+.breadcrumb-list li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    position: relative;
+    top: 5px;
+    color: #fff;
+    font-size: 10px;
+}
+
+/* ============================== Content Section ============================== */
+.content {
+    padding: 50px 0;
+    background: #eee;
+}
+
+.content-block {
+    padding: 30px;
+    background: #fff;
+}
+
+.content-block h1 {
+    color: #000;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* ============================== Single Post Section ============================== */
+.single-post-content .content-block {
+    padding-right: 40px;
+}
+
+.single-post-thumbnail img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.single-post-content .row>div:last-child {
+    padding: 15px;
+    background: #fca028;
+}
+
+.related-post-content h5 {
+    color: #000;
+    font-size: 22px;
+    font-weight: 500;
+    border-bottom: #000 solid 1px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.related-post-content ul li {
+    list-style: none;
+}
+
+.related-post-content ul li a {
+    display: block;
+    padding: 10px 15px;
+    margin-top: 1px;
+    color: #fff;
+    background: #000;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.related-post-content ul li a .fa-solid {
+    font-size: 14px;
 }
